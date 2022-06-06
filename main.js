@@ -1,5 +1,6 @@
 import "./style.css";
 import * as THREE from "three";
+import bg from "./bg/bg.jpeg";
 
 //canvas
 const canvas = document.querySelector("#webgl");
@@ -9,7 +10,7 @@ const scene = new THREE.Scene();
 
 // 背景のテクスチャ
 const textureLoader = new THREE.TextureLoader();
-const bgTexture = textureLoader.load("bg/bg.jpg");
+const bgTexture = textureLoader.load(bg);
 scene.background = bgTexture;
 
 //サイズ
@@ -114,7 +115,6 @@ document.body.onscroll = () => {
       (document.documentElement.scrollHeight -
         document.documentElement.clientHeight)) *
     100;
-  console.log(scrollParcent);
 };
 
 //アニメーション
